@@ -1,0 +1,29 @@
+/* Kullanıcıdan alınan sayıyı kullanıcının istediği aralıklarla ekrana yazdıran program */
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace recursive
+{
+    class Program
+    {
+        static void sayi(int sinir , int k)
+        {
+            sinir = sinir - k;            
+            if (sinir > k) sayi(sinir , k);
+            Console.WriteLine("Ileriye dogru : {0}", sinir);
+        }
+        static void Main(string[] args)
+        {
+            int sinir , k;
+            Console.WriteLine("Kacar kacar ilerlesin istersiniz? ");
+            k = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hangi sayiya kadar yazdirmak istersiniz : ");
+            sinir = Convert.ToInt32(Console.ReadLine());
+            sayi(sinir , k);
+            Console.ReadKey();
+        }
+    }
+}
